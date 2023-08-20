@@ -1,16 +1,14 @@
 # controle-pokemon
 
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em operações comuns de instituições financeiras (ex: saque, depósito, extrato, saldo, cadastro), sendo o diferencial, a cobrança de taxas de forma abusiva para cada operação realizada pelo cliente.
-
-O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
+Este projeto consiste em uma check-list dos Pokémons lendários da primeira e segunda geração, para controle de quais o usuário já capturou.
 
 ## Endereço de Deploy - GitHub Pages
 
-https://utfpr-gp.github.io/roubank-css/
+?
 
 ## Protótipo
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+https://www.figma.com/file/b39WzFoO57IkMJOEn7R0mu/Poke-Legends
 
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
@@ -45,19 +43,6 @@ https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
 
 #### RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
 - [ ] ID 22 - Realiza requisições assíncronas para uma API fake e APIs públicas, utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para obter dados dinâmicos e realizar a manipulação e exibição dos resultados na página web.
-
-## Manual de execução
-- Clonar o repositório com `git clone`
-- Fazer checkout no branch `develop` que contém as modificações mais recentes
-- Abrir o projeto no editor Visual Studio Code (VS Code)
-- Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
-- Instalar as dependências contidas no `package.json`
-  - Comando: `npm i`
-- (Opcional) Instalar o JSON Server globalmente disponível em `https://www.npmjs.com/package/json-server`
-  - Comando: `npm i -g json-server` 
-  - É opcional porque a dependência já vem cadastrada no arquivo `package.json` para instalação local na pasta `node_modules`
-- Executar a API Fake (JSON Server) via um dos seguintes comandos: 
-  - Execução via script registrado no `package.json`: `npm run json:server:routes` 
   - Ou via Execução explícita: `json-server --watch db.json --routes routes.json`
 - O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json` e `routes.json`.
   - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    

@@ -1,0 +1,15 @@
+{
+  "name": "Poke Legends",
+  "version": "1.0.0",
+  "description": "Este projeto consiste em uma check-list dos Pokémons lendários da primeira e segunda geração, para controle de quais o usuário já capturou.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}

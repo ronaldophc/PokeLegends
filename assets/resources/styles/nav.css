@@ -1,0 +1,14 @@
+#logot {
+    font-family: Lacquer;
+    color: #f61414;
+    font-size: 45px;
+    -webkit-text-stroke: 1px #000000;
+}
+
+#links {
+    font-family: Lacquer;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke: 0.5px #000000;
+    font-weight: bold;
+}

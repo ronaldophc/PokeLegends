@@ -22,6 +22,6 @@ form.addEventListener("submit", (event) => {
     // Cria um objeto da classe Usuario
     const usuario = new Usuario(nome, email, senha);
 
-    const url = "/app/perfil.html";
+    const url = "/controle_pokemon/app/perfil.html";
     location.href = url;
 });

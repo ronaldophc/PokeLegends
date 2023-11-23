@@ -4,7 +4,7 @@ Este projeto consiste em uma check-list dos Pokémons lendários da primeira e s
 
 ## Endereço de Deploy - GitHub Pages
 
-(https://ronaldophc.github.io/controle_pokemon/index.html)
+https://ronaldophc.github.io/controle_pokemon/index.html
 
 ## Protótipo
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poke Legends</title>
   <link rel="stylesheet" href="assets/libraries/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/resources/styles/style.css" />
+  <link rel="stylesheet" href="app/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet" />
@@ -18,31 +18,30 @@
     <img class="logo" src="assets/resources/images/Logo2.png" style="height: 250px;" alt="Logo" />
     <h1>Poke Legends</h1>
     <form>
-      <div>
-        <label for="inputEmail" class="form-label"></label>
-        <input type="email" class="form-control" id="email" placeholder="Email" />
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <input type="email" class="form-control mb-3" id="email" placeholder="Email" />
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="password" class="form-label"></label>
-        <input type="password" class="form-control" id="password" placeholder="Senha" />
+      <div class="row justify-content-center">
+        <div class="col-9 mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Senha" />
+        </div>
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="d-grid col-9 mx-auto">
         <button type="submit" class="btn btn-purple btn-sm mb-2">Entrar</button>
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="row text-center">
         <a href="app/cadastro.html">Cadastre-se!</a>
       </div>
-      <div class="d-flex justify-content-center">
-        <a href="app/newpassword.html">Esqueceu sua senha?</a>
-      </div>
+    </form>
   </div>
-  </form>
 
 
   <script src="assets/libraries/jquery/jquery-3.7.1.min.js"></script>
   <script src="assets/libraries/jquery/jquery.mask.js"></script>
   <script src="assets/libraries/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/resources/scripts/index.js"></script>
+  <script src="app/index.js"></script>
 </body>
 
 </html>

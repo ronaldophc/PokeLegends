@@ -10,37 +10,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/controle_pokemon/logo.png" type="image/x-icon" />
+  <link rel="icon" href="logo.ico" type="image/x-icon" />
 </head>
 
 <body class="bg-dark">
   <div class="container">
-    <img src="/controle_pokemon/assets/resources/images/Logo2.png" class="rounded mx-auto d-block img-fluid" style="max-height: 200px" alt="Logo">
-    <h1>Poke Legends</h1>
+    <img src="/controle_pokemon/assets/resources/images/Logo2.png" class="rounded mx-auto d-block img-fluid mt-5"
+      style="max-height: 200px" alt="Logo">
+    <h1 class="text-24 sm:text-32 md:text-32">Poke Legends</h1>
+    <p class="text-center text-light text-24 sm:text-32 md:text-32" id="error"><i class="bi bi-exclamation-circle"></i> Email ou senha incorretos.</p>
     <form>
       <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-3 mb-3">
-          <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" autofocus>
+        <div class="col-sm-6 col-md-3">
+          <input type="email" class="form-control mb-3" id="email" placeholder="Email" required />
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-sm-6 col-md-3 mb-3">
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-3 mb-3">
-          <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" />
+          <input type="password" class="form-control" id="password" placeholder="Senha" required />
         </div>
       </div>
       <div class="d-grid col-sm-6 col-md-3 mx-auto">
-        <button type="submit" class="btn btn-purple btn-sm mb-2" id="enviar">Cadastre-se</button>
+        <button type="submit" class="btn btn-purple btn-sm mb-2">Entrar</button>
       </div>
-      <div class="d-flex justify-content-center">
-        <a href="/controle_pokemon/index.html">Já tem uma conta? Entre aqui!</a>
+      <div class="row text-center">
+        <a href="/controle_pokemon/app/pages/cadastro/cadastro.html">Cadastre-se!</a>
       </div>
     </form>
   </div>
+
+
   <script src="/controle_pokemon/assets/libraries/jquery/jquery-3.7.1.min.js"></script>
   <script src="/controle_pokemon/assets/libraries/jquery/jquery.mask.js"></script>
   <script src="/controle_pokemon/assets/libraries/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

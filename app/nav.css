@@ -6,9 +6,6 @@
 }
 
 #links {
-    font-family: Lacquer;
-    font-size: 40px;
+    font-family: sans-serif;
     color: white;
-    -webkit-text-stroke: 0.5px #000000;
-    font-weight: bold;
 }

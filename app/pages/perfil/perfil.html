@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet" />
-    <link rel="icon" href="/controle_pokemon/logo.png" type="image/x-icon" />
+    <link rel="icon" href="/controle_pokemon/app/logo.ico" type="image/x-icon" />
 </head>
 
 <body class="bg-dark">
@@ -29,10 +29,11 @@
                 <div class="collapse navbar-collapse" id="menu-principal">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item ms-5">
-                            <a id="links" class="nav-link" href="#">Perfil</a>
+                            <a id="links" class="nav-link fs-2" href="#">Perfil</a>
                         </li>
                         <li class="nav-item ms-5">
-                            <a id="links" class="nav-link" href="lista.html">Lista</a>
+                            <a id="links" class="nav-link fs-2"
+                                href="/controle_pokemon/app/pages/lista/lista.html">Lista</a>
                         </li>
                     </ul>
                 </div>
@@ -52,21 +53,42 @@
                                         <input class="form-control" id="email" type="email">
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="Name">Nome Completo</label>
-                                        <input class="form-control" id="Name" type="text">
+                                        <label class="small mb-1" for="name">Nome Completo</label>
+                                        <input class="form-control" id="name" type="text">
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="Phone">Número de Telefone</label>
-                                        <input class="form-control" id="Phone" type="tel" placeholder="(**) ****-****">
+                                        <label class="small mb-1" for="phone">Número de Telefone</label>
+                                        <input class="form-control" id="phone" type="tel" minlength="14">
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="Birthday">Data de aniversário</label>
-                                        <input class="form-control" id="Birthday" type="text" name="birthday"
-                                            placeholder="**/**/****">
+                                        <label class="small mb-1" for="birthday">Data de aniversário</label>
+                                        <input class="form-control" id="birthday" type="text" name="birthday">
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Salvar</button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-primary" type="submit">Salvar</button>
+                                    <button class="btn btn-danger" id="logout" type="button">Sair</button>
+                                </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal-enviado" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-success" id="exampleModalLabel">Sucesso!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Seu dados foram alterados com sucesso.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +114,7 @@
             <script src="/controle_pokemon/assets/libraries/jquery/jquery-3.7.1.min.js"></script>
             <script src="/controle_pokemon/assets/libraries/jquery/jquery.mask.js"></script>
             <script src="/controle_pokemon/assets/libraries/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="/controle_pokemon/app/index.js"></script>
+            <script src="/controle_pokemon/app/pages/perfil/perfil.js"></script>
 </body>
 
 </html>

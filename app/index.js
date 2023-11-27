@@ -16,26 +16,24 @@ form.addEventListener("submit", (event) => {
 
     // Transforma os dados JSON em um objeto JavaScript
     const dados = JSON.parse(localStorage.getItem('dados'));
-
-    // Simulação de dados armazenados no localStorage
-    const email = dados.email || "admin";
-    const password = dados.password || "admin";
-
-    if (email === emailu && password === passwordu) {
-        localStorage.setItem("emSessao", "sim");
-
-        location.href = "/controle_pokemon/app/pages/lista/lista.html";
-    } else {
+    if (dados == null) {
         $("#error").show();
+    } else {
+        const email = dados.email;
+        const password = dados.password;
+        if (email == emailu && password == passwordu) {
+            localStorage.setItem("emSessao", "sim");
+
+            location.href = "/controle_pokemon/app/pages/lista/lista.html";
+        } else {
+            $("#error").show();
+        }
     }
+
 });
 
 function accDefault() {
-    const sessaoa = localStorage.getItem("dados");
-    const sessao = [sessaoa];
-    if (sessao.includes(email)) {
-        return true;
-    } else {
+    if (localStorage.getItem("dados") == null) {
         const dados = {
             name: "admin",
             email: "admin@admin.com",

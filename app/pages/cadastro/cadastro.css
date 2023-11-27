@@ -8,28 +8,19 @@ h1 {
 
 a {
     color: #f61414;
-    font-size: 20px;
 }
 
 form {
     margin-top: 20px;
 }
 
-.btn-purple {
-    background-color: #663399;
-    border-color: #663399;
+.btn {
+    background-color: #7f2bb3;
     color: white;
-    font-size: 30px;
     text-shadow: 2px 2px black;
 }
 
 .btn:hover {
-    background-color: #663399;
-    color: gray;
-}
-
-.btn-ok {
-    background-color: #663399;
-    border-color: #663399;
+    background-color: #6a1b9a;
     color: white;
 }

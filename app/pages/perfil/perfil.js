@@ -4,14 +4,6 @@ const emailInput = document.getElementById("email");
 const nameInput = document.getElementById("name");
 const logout = document.getElementById("logout");
 
-$(document).ready(function () {
-    if (verificarLogin() == false) {
-        location.href = "/controle_pokemon/app/index.html";
-        return true;
-    }
-});
-
-
 function verificarLogin() {
     const sessao = localStorage.getItem("emSessao") || "nao";
     if (sessao == "sim") {
@@ -20,6 +12,51 @@ function verificarLogin() {
         return false;
     }
 }
+
+function lerDados() {
+    // Recupera os dados armazenados no localStorage
+    const dadosJson = localStorage.getItem('dados');
+
+    // Transforma os dados JSON em um objeto JavaScript
+    const dados = JSON.parse(dadosJson);
+    document.getElementById("email").value = dados.email;
+    document.getElementById("name").value = dados.name;
+    document.getElementById("birthday").value = dados.birthday;
+    document.getElementById("phone").value = dados.phone;
+}
+
+function capturarDados() {
+    const dadosJson2 = JSON.parse(localStorage.getItem('dados'));
+
+    const password2 = dadosJson2.password;
+    const dados = {
+        name: form.querySelector("#name").value,
+        email: form.querySelector("#email").value,
+        phone: form.querySelector("#phone").value,
+        password: password2,
+        birthday: form.querySelector("#birthday").value
+    };
+
+    // Transforma os dados em formato JSON
+    const dadosJson = JSON.stringify(dados);
+
+    // Armazena os dados no localStorage
+    localStorage.setItem("dados", dadosJson);
+}
+
+$(document).ready(function () {
+    if (verificarLogin() == false) {
+        location.href = "/controle_pokemon/app/index.html";
+        return true;
+    }
+    lerDados();
+    $('#birthday').mask('00/00/0000', {
+        placeholder: "__/__/____"
+    });
+    $('#phone').mask('(00) 0000-00009', {
+        placeholder: "(**) ****-****"
+    });
+});
 
 logout.addEventListener("click", function (e) {
     localStorage.clear();
@@ -57,17 +94,7 @@ emailInput.addEventListener("input", function (e) {
     }
 });
 
-function lerDados() {
-    // Recupera os dados armazenados no localStorage
-    const dadosJson = localStorage.getItem('dados');
 
-    // Transforma os dados JSON em um objeto JavaScript
-    const dados = JSON.parse(dadosJson);
-    document.getElementById("email").value = dados.email;
-    document.getElementById("name").value = dados.name;
-    document.getElementById("birthday").value = dados.birthday;
-    document.getElementById("phone").value = dados.phone;
-}
 
 phoneInput.addEventListener("input", function (e) {
     const regex = /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{3,4})/;
@@ -81,35 +108,6 @@ phoneInput.addEventListener("input", function (e) {
         e.target.setCustomValidity("Número inválido!");
     }
 });
-
-$(document).ready(function () {
-    lerDados();
-    $('#birthday').mask('00/00/0000', {
-        placeholder: "__/__/____"
-    });
-    $('#phone').mask('(00) 0000-00009', {
-        placeholder: "(**) ****-****"
-    });
-});
-
-function capturarDados() {
-    const dadosJson2 = JSON.parse(localStorage.getItem('dados'));
-
-    const password2 = dadosJson2.password;
-    const dados = {
-        name: form.querySelector("#name").value,
-        email: form.querySelector("#email").value,
-        phone: form.querySelector("#phone").value,
-        password: password2,
-        birthday: form.querySelector("#birthday").value
-    };
-
-    // Transforma os dados em formato JSON
-    const dadosJson = JSON.stringify(dados);
-
-    // Armazena os dados no localStorage
-    localStorage.setItem("dados", dadosJson);
-}
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();

@@ -1,11 +1,9 @@
-#logot {
-    font-family: Lacquer;
-    color: #f61414;
-    font-size: 45px;
-    -webkit-text-stroke: 1px #000000;
-}
-
 #links {
-    font-family: sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
 }
+
+.bg-gradient {
+    background: linear-gradient(to right, #ff6b6b, #5b247a);
+}
+

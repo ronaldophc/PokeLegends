@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poke Legends</title>
-    <link rel="stylesheet" href="/controle_pokemon/assets/libraries/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/controle_pokemon/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/controle_pokemon/app/nav.css" />
     <link rel="stylesheet" href="/controle_pokemon/app/pages/lista/lista.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/controle_pokemon/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet" />
@@ -18,10 +18,10 @@
 <body class="bg-dark">
     <nav class="navbar navbar-expand-sm bg-gradient">
         <div class="container">
-            <img class="navbar-brand" src="/controle_pokemon/assets/resources/images/Logo2.png"
+            <img class="navbar-brand" src="/controle_pokemon/assets/resources/images/logo.png"
                 class="rounded mx-auto d-block img-fluid" style="max-height: 100px" alt="Logo">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" id="sanduiche"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,7 +59,7 @@
                                 alt="Articuno" height="50"></a>
                         </th>
                         <td class="align-middle text-center">Articuno</td>
-                        <td class="align-middle text-center">Kanto</td>
+                        <td class="align-middle text-center" id="generationArti"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="articuno">
@@ -71,7 +71,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701120650/moltres_tpbjr1.png"
                                     alt="Moltres" height="50"></a></th>
                         <td class="align-middle text-center">Moltres</td>
-                        <td class="align-middle text-center">Kanto</td>
+                        <td class="align-middle text-center" id="generationMol"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="moltres">
@@ -83,7 +83,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701120740/zapdos_bampsb.png"
                                     alt="Zapdos" height="50"></a></th>
                         <td class="align-middle text-center">Zapdos</td>
-                        <td class="align-middle text-center">Kanto</td>
+                        <td class="align-middle text-center" id="generationZ"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="zapdos">
@@ -96,7 +96,7 @@
                                     alt="Mew" height="50"></a>
                         </th>
                         <td class="align-middle text-center">Mew</td>
-                        <td class="align-middle text-center">Kanto</td>
+                        <td class="align-middle text-center" id="generationMew"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="mew">
@@ -108,7 +108,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701120866/mewtwo_rksga2.png"
                                     alt="Mewtwo" height="45"></a></th>
                         <td class="align-middle text-center">Mewtwo</td>
-                        <td class="align-middle text-center">Kanto</td>
+                        <td class="align-middle text-center"  id="generationM"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="mewtwo">
@@ -122,7 +122,7 @@
                                     alt="Raikou" height="50"></a>
                         </th>
                         <td class="align-middle text-center">Raikou</td>
-                        <td class="align-middle text-center">Johto</td>
+                        <td class="align-middle text-center" id="generationR"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="raikou">
@@ -134,7 +134,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701121059/entei_thryoq.png"
                                     alt="Entei" height="50"></a></th>
                         <td class="align-middle text-center">Entei</td>
-                        <td class="align-middle text-center">Johto</td>
+                        <td class="align-middle text-center" id="generationE"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="entei">
@@ -146,7 +146,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701121073/suicune_cpu3qp.png"
                                     alt="suicune" height="50"></a></th>
                         <td class="align-middle text-center">Suicune</td>
-                        <td class="align-middle text-center">Johto</td>
+                        <td class="align-middle text-center" id="generationS"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="suicune">
@@ -159,7 +159,7 @@
                                     alt="Mew" height="50"></a>
                         </th>
                         <td class="align-middle text-center">Ho-Oh</td>
-                        <td class="align-middle text-center">Johto</td>
+                        <td class="align-middle text-center" id="generationH"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="hooh">
@@ -171,7 +171,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701121257/lugia_xyhvej.png"
                                     alt="lugia" height="45"></a></th>
                         <td class="align-middle text-center">Lugia</td>
-                        <td class="align-middle text-center">Johto</td>
+                        <td class="align-middle text-center" id="generationL"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="lugia">
@@ -183,7 +183,7 @@
                                     src="https://res.cloudinary.com/ddxoz7oy3/image/upload/v1701121295/celebi_qesxlq.png"
                                     alt="celebi" height="45"></a></th>
                         <td class="align-middle text-center">Celebi</td>
-                        <td class="align-middle text-center">Johto</td>
+                        <td class="align-middle text-center" id="generationC"></td>
                         <td class="align-middle">
                             <div class="form-check d-flex justify-content-center align-items-center">
                                 <input class="form-check-input" type="checkbox" id="celebi">
@@ -197,7 +197,7 @@
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="lista.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                    <img src="/controle_pokemon/assets/resources/images/Logo2.png" alt="logo" height=40">
+                    <img src="/controle_pokemon/assets/resources/images/logo.png" alt="logo" height=40">
                 </a>
                 <span class="mb-3 mb-md-0 text-light">&copy; 2023 Poke Legends</span>
             </div>
@@ -209,9 +209,10 @@
             </ul>
         </footer>
 
+        <script src="/controle_pokemon/node_modules/axios/dist/axios.min.js"></script>
         <script src="/controle_pokemon/assets/libraries/jquery/jquery-3.7.1.min.js"></script>
         <script src="/controle_pokemon/assets/libraries/jquery/jquery.mask.js"></script>
-        <script src="/controle_pokemon/assets/libraries/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/controle_pokemon/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/controle_pokemon/app/pages/lista/lista.js"></script>
 </body>
 

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poke Legends</title>
-  <link rel="stylesheet" href="/controle_pokemon/assets/libraries/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/controle_pokemon/node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/controle_pokemon/app/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,10 +15,11 @@
 
 <body class="bg-dark">
   <div class="container">
-    <img src="/controle_pokemon/assets/resources/images/Logo2.png" class="rounded mx-auto d-block img-fluid mt-5"
+    <img src="/controle_pokemon/assets/resources/images/logo.png" class="rounded mx-auto d-block img-fluid mt-5"
       style="max-height: 200px" alt="Logo">
     <h1 class="text-24 sm:text-32 md:text-32">Poke Legends</h1>
-    <p class="text-center text-light text-24 sm:text-32 md:text-32" id="error"><i class="bi bi-exclamation-circle"></i> Email ou senha incorretos.</p>
+    <p class="text-center text-danger text-24 sm:text-32 md:text-32" id="error"><i
+        class="bi bi-exclamation-circle"></i> Email ou senha incorretos.</p>
     <form>
       <div class="row justify-content-center">
         <div class="col-sm-6 col-md-3">
@@ -34,7 +35,9 @@
         <button type="submit" class="btn btn-purple btn-sm mb-2 fs-2">Entrar</button>
       </div>
       <div class="row text-center">
-        <a href="/controle_pokemon/app/pages/cadastro/cadastro.html"><p class="fs-5">Cadastre-se!</p></a>
+        <a href="/controle_pokemon/app/pages/cadastro/cadastro.html">
+          <p class="fs-5">Cadastre-se!</p>
+        </a>
       </div>
     </form>
   </div>
@@ -42,7 +45,7 @@
 
   <script src="/controle_pokemon/assets/libraries/jquery/jquery-3.7.1.min.js"></script>
   <script src="/controle_pokemon/assets/libraries/jquery/jquery.mask.js"></script>
-  <script src="/controle_pokemon/assets/libraries/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/controle_pokemon/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/controle_pokemon/app/index.js"></script>
 </body>
 

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Verificar se o usuario esta logado
     if (verifyLogin() == false) {
-        location.href = "../../index.html";
+        location.href = "/PokeLegends/app/index.html";
         return true;
     }
 

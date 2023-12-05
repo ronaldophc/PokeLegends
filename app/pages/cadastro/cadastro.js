@@ -8,7 +8,7 @@ class Usuario {
 
 $(document).ready(function () {
     if(verificarLogin() == true) {
-        location.href = "../lista/lista.html";
+        location.href = "/PokeLegends/app/pages/lista/lista.html";
         return true;
     }
 });

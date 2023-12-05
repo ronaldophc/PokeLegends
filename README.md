@@ -4,7 +4,7 @@ Este projeto consiste em uma check-list dos Pokémons lendários da primeira e s
 
 ## Endereço de Deploy - GitHub Pages
 
-ronaldophc.github.io/PokeLegends/
+https://ronaldophc.github.io/PokeLegends/app
 
 ## Protótipo
 

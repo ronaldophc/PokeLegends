@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Verificar se o usuario esta logado
     if (verifyLogin() == false) {
-        location.href = "/controle_pokemon/app/index.html";
+        location.href = "../../index.html";
         return true;
     }
 

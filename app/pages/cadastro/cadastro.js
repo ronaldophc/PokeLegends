@@ -8,7 +8,7 @@ class Usuario {
 
 $(document).ready(function () {
     if(verificarLogin() == true) {
-        location.href = "/controle_pokemon/app/pages/lista/lista.html";
+        location.href = "../lista/lista.html";
         return true;
     }
 });

@@ -23,7 +23,7 @@ form.addEventListener("submit", (event) => {
         const password = dados.password;
         if (email == emailu && password == passwordu) {
             localStorage.setItem("emSessao", "sim");
-            location.href = "/controle_pokemon/app/pages/lista/lista.html";
+            location.href = "/app/pages/lista/lista.html";
             localStorage.setItem("pokemons", JSON.stringify(pokemons));
         } else {
             $("#error").show();
@@ -50,7 +50,7 @@ function accDefault() {
 
 $(document).ready(function () {
     if (verificarLogin() == true) {
-        location.href = "/controle_pokemon/app/pages/lista/lista.html";
+        location.href = "/app/pages/lista/lista.html";
         return true;
     }
     $("#error").hide();

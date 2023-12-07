@@ -1,95 +1,82 @@
-class Usuario {
-    constructor(name, email, password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-}
-
-$(document).ready(function () {
-    if(verificarLogin() == true) {
-        location.href = "/PokeLegends/app/pages/lista/lista.html";
-        return true;
-    }
-});
-
-function verificarLogin() {
-    const sessao = localStorage.getItem("emSessao");
-    if (sessao == "sim") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 const form = document.querySelector("form");
 const emailInput = document.getElementById("email");
 const nameInput = document.getElementById("name");
+const passwordInput = document.getElementById("password");
 
-// Defina um evento de validação personalizado para o campo de entrada
-emailInput.addEventListener("input", function (e) {
+// Função para verificar se o usuário está em sessão
+function verificarLogin() {
+    return localStorage.getItem("emSessao") === "sim";
+}
+
+// Função para validar o formato do email
+function validarEmail(email) {
     const regex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const isValid = regex.test(e.target.value);
+    return regex.test(email);
+}
 
-    if (isValid) {
-        // Se o email for válido, limpe a mensagem de erro personalizada
-        e.target.setCustomValidity("");
-        $("#email").css("border-color", "")
-    } else {
-        // Se o email não for válido, defina a mensagem de erro personalizada
-        e.target.setCustomValidity("Digite um Email válido!");
-        $("#email").css("border-color", "red")
-    }
-});
-
-// Defina um evento de validação personalizado para o campo de entrada
-nameInput.addEventListener("input", function (e) {
+// Função para validar o formato do nome
+function validarNome(nome) {
     const regex = /([A-Z][a-z]{3,} )([A-Z][a-z]{3,} )?([A-Z][a-z]{3,})/;
-    const isValid = regex.test(e.target.value);
+    return regex.test(nome);
+}
 
-    if (isValid) {
-        // Se o nome for válido, limpe a mensagem de erro personalizada
-        e.target.setCustomValidity("");
-        $("#name").css("border-color", "")
+// Função para exibir mensagem de erro no campo
+function exibirErroCampo(input) {
+    input.setCustomValidity(`Digite um ${input.name} válido!`);
+    $(`#${input.id}`).css("border-color", "red");
+}
+
+// Função para limpar mensagem de erro no campo
+function limparErroCampo(input) {
+    input.setCustomValidity("");
+    $(`#${input.id}`).css("border-color", "");
+}
+
+// Adiciona eventos de validação para os campos de email e nome
+emailInput.addEventListener("input", function (e) {
+    if (validarEmail(e.target.value)) {
+        limparErroCampo(e.target);
     } else {
-        // Se o nome não for válido, defina a mensagem de erro personalizada
-        e.target.setCustomValidity("Digite seu nome completo!");
-        $("#name").css("border-color", "red")
+        exibirErroCampo(e.target);
     }
 });
 
+nameInput.addEventListener("input", function (e) {
+    if (validarNome(e.target.value)) {
+        limparErroCampo(e.target);
+    } else {
+        exibirErroCampo(e.target);
+    }
+});
+
+// Função para capturar e armazenar dados no localStorage
 function capturarDados() {
     const dados = {
-        name: form.querySelector("#name").value,
-        email: form.querySelector("#email").value,
-        password: form.querySelector("#password").value
+        name: nameInput.value,
+        email: emailInput.value,
+        password: passwordInput.value,
     };
 
-    // Transforma os dados em formato JSON
-    const dadosJson = JSON.stringify(dados);
-
     // Armazena os dados no localStorage
-    localStorage.setItem("dados", dadosJson);
+    localStorage.setItem("dados", JSON.stringify(dados));
 }
 
 // Evento de submit do formulário
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-
     // Captura os dados do formulário
-    const name = document.querySelector("#name").value;
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
     capturarDados();
 
-    $(function () {
-        // Adiciona um efeito de animação ao painel de resultados
-        $("#modal-enviado").modal("show");
-        $("#modal-enviado").fadeIn();
-    });
+    // Exibe o modal de envio com animação
+    $('#modal-enviado').modal('show');
+    $('#modal-enviado').fadeIn();
 
-    // Cria um objeto da classe Usuario
-    const usuario = new Usuario(name, email, password);
+});
 
+// Verifica se o usuário está em sessão ao carregar a página
+$(document).ready(function () {
+    if (verificarLogin()) {
+        location.href = "/app/pages/lista/lista.html";
+    }
 });

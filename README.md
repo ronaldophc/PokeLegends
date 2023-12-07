@@ -1,4 +1,4 @@
-# controle-pokemon
+# PokeLegends
 
 Este projeto consiste em uma check-list dos Pokémons lendários da primeira e segunda geração, para controle de quais o usuário já capturou.
 

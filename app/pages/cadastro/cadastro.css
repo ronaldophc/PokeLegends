@@ -1,6 +1,4 @@
 h1 {
-    text-align: center;
-    margin-top: 20px;
     font-family: Lacquer;
     color: #f61414;
     text-shadow: 2px 2px black;
@@ -8,10 +6,6 @@ h1 {
 
 a {
     color: #f61414;
-}
-
-form {
-    margin-top: 20px;
 }
 
 .btn {

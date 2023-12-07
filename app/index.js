@@ -1,58 +1,63 @@
 const form = document.querySelector('form');
 
+// Função para verificar se o usuário está em sessão
 function verificarLogin() {
-    const sessao = localStorage.getItem("emSessao");
-    if (sessao == "sim") {
-        return true;
-    } else {
-        return false;
-    }
+    return localStorage.getItem("emSessao") === "sim";
 }
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const emailu = document.getElementById('email').value;
-    const passwordu = document.getElementById('password').value;
+// Função para exibir mensagem de erro
+function exibirErro() {
+    $("#error").show();
+}
 
-    // Transforma os dados JSON em um objeto JavaScript
-    const dados = JSON.parse(localStorage.getItem('dados'));
-    if (dados == null) {
-        $("#error").show();
-    } else {
-        const email = dados.email;
-        const password = dados.password;
-        if (email == emailu && password == passwordu) {
-            localStorage.setItem("emSessao", "sim");
-            location.href = "/PokeLegends/app/pages/lista/lista.html";
-            localStorage.setItem("pokemons", JSON.stringify(pokemons));
-        } else {
-            $("#error").show();
-        }
-    }
+// Função para redirecionar para a página de lista
+function redirecionarParaLista() {
+    location.href = "/app/pages/lista/lista.html";
+}
 
-});
-
-function accDefault() {
-    if (localStorage.getItem("dados") == null) {
-        const dados = {
+// Função para configurar dados padrão no localStorage, se não existirem
+function configurarDadosPadrao() {
+    if (localStorage.getItem("dados") === null) {
+        const dadosPadrao = {
             name: "admin",
             email: "admin@admin.com",
             password: "admin"
         };
-
-        // Transforma os dados em formato JSON
-        const dadosJson = JSON.stringify(dados);
-
-        // Armazena os dados no localStorage
-        localStorage.setItem("dados", dadosJson);
+        localStorage.setItem("dados", JSON.stringify(dadosPadrao));
     }
 }
 
-$(document).ready(function () {
-    if (verificarLogin() == true) {
-        location.href = "/PokeLegends/app/pages/lista/lista.html";
-        return true;
+// Evento de envio do formulário
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const emailInput = document.getElementById('email').value;
+    const passwordInput = document.getElementById('password').value;
+
+    const dadosArmazenados = JSON.parse(localStorage.getItem('dados'));
+
+    if (dadosArmazenados == null) {
+        exibirErro();
+    } else {
+        const email = dadosArmazenados.email;
+        const password = dadosArmazenados.password;
+
+        if (email === emailInput && password === passwordInput) {
+            localStorage.setItem("emSessao", "sim");
+            redirecionarParaLista();
+        } else {
+            exibirErro();
+        }
     }
+});
+
+// Verifica se o usuário está em sessão ao carregar a página
+$(document).ready(function () {
+    if (verificarLogin()) {
+        redirecionarParaLista();
+        return;
+    }
+
     $("#error").hide();
-    accDefault();
+    configurarDadosPadrao();
 });

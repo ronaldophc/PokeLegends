@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Verificar se o usuario esta logado
-    if (verifyLogin() == false) {
-        location.href = "/PokeLegends/app/index.html";
+    if (!verificarLogin()) {
+        location.href = "/app/index.html";
         return true;
     }
 
-    // Verificar se o usuario já marcou que capturou algum pokemon
     const pokemons = JSON.parse(localStorage.getItem("pokemons")) || {};
-
-    // Adicionar evento de clique para cada checkbox
     const checkboxes = document.querySelectorAll("input[type=checkbox]");
 
     checkboxes.forEach(checkbox => {
@@ -29,58 +26,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Lista de Pokémon e IDs de elementos correspondentes
     const pokemonsGen = [{
-        nome: 'articuno',
-        idElemento: 'generationArti'
-    },
-    {
-        nome: 'moltres',
-        idElemento: 'generationMol'
-    },
-    {
-        nome: 'zapdos',
-        idElemento: 'generationZ'
-    },
-    {
-        nome: 'mew',
-        idElemento: 'generationMew'
-    },
-    {
-        nome: 'mewtwo',
-        idElemento: 'generationM'
-    },
-    {
-        nome: 'raikou',
-        idElemento: 'generationR'
-    },
-    {
-        nome: 'entei',
-        idElemento: 'generationE'
-    },
-    {
-        nome: 'suicune',
-        idElemento: 'generationS'
-    },
-    {
-        nome: 'ho-oh',
-        idElemento: 'generationH'
-    },
-    {
-        nome: 'lugia',
-        idElemento: 'generationL'
-    },
-    {
-        nome: 'celebi',
-        idElemento: 'generationC'
-    },
-];
+            nome: 'articuno',
+            idElemento: 'generationArti'
+        },
+        {
+            nome: 'moltres',
+            idElemento: 'generationMol'
+        },
+        {
+            nome: 'zapdos',
+            idElemento: 'generationZ'
+        },
+        {
+            nome: 'mew',
+            idElemento: 'generationMew'
+        },
+        {
+            nome: 'mewtwo',
+            idElemento: 'generationM'
+        },
+        {
+            nome: 'raikou',
+            idElemento: 'generationR'
+        },
+        {
+            nome: 'entei',
+            idElemento: 'generationE'
+        },
+        {
+            nome: 'suicune',
+            idElemento: 'generationS'
+        },
+        {
+            nome: 'ho-oh',
+            idElemento: 'generationH'
+        },
+        {
+            nome: 'lugia',
+            idElemento: 'generationL'
+        },
+        {
+            nome: 'celebi',
+            idElemento: 'generationC'
+        },
+    ];
 
     // Iterar sobre a lista e chamar a função para cada Pokémon
-    pokemonsGen.forEach(({
-        nome,
-        idElemento
-    }) => {
+    for (const { nome, idElemento } of pokemonsGen) {
         obterDetalhesPokemon(nome, idElemento);
-    });
+    }
 });
 
 async function obterDetalhesPokemon(nomePokemon, idElemento) {
@@ -99,7 +93,6 @@ async function obterDetalhesPokemon(nomePokemon, idElemento) {
     }
 }
 
-function verifyLogin() {
-    const sessao = localStorage.getItem("emSessao") || "nao";
-    return sessao === "sim";
+function verificarLogin() {
+    return localStorage.getItem("emSessao") === "sim";
 }

@@ -2,6 +2,10 @@
 
 Este projeto consiste em uma check-list dos Pokémons lendários da primeira e segunda geração, para controle de quais o usuário já capturou.
 
+## Vídeo apresentando o projeto
+
+https://www.youtube.com/watch?v=EC0Mr70YPX0
+
 ## Endereço de Deploy - GitHub Pages
 
 https://ronaldophc.github.io/PokeLegends/app
